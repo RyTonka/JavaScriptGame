@@ -7,6 +7,21 @@
 <body>
 <h2> What do you want to do? </h2>
   <a href="destinations.html"> Go Somewhere </a>
-  <h1> Test 3</h1>
+  <h1> Test 4</h1>
+<p>Click the button to demonstrate the prompt box.</p>
+
+<button onclick="myFunction()">Try it</button>
+
+<p id="demo"></p>
+
+<script>
+function myFunction() {
+  var person = prompt("Please enter your name", "Harry Potter");
+  if (person != null) {
+    document.getElementById("demo").innerHTML =
+    "Hello " + person + "! How are you today?";
+  }
+}
+</script>
 </body>
 </html>
