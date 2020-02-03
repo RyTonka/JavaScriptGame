@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<h1> Warsa dsd </h1>
+<h1> Wars </h1>
 
 </head>
 <body>
@@ -11,9 +11,9 @@ var money = 0;
 var product1price = 10;
 function buyProduct1() {
   var amount = parseInt(prompt("How much would you like to buy"));
+  document.getElementById("moneyDisplay").innerHTML = amount;
   product1 += amount
   money -= amount * product1price;
-  amount = 0;
 }
 </script>
 
