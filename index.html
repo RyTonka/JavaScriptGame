@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<h1> Wars </h1>
+<h1> Wars test</h1>
 
 </head>
 <body>
@@ -11,14 +11,14 @@ var money = 0;
 var product1price = 10;
 function buyProduct1() {
   var amount = prompt("How much would you like to buy");
-  product1 = amount
+  product1 += amount
   money -= amount * product1price;
   amount = 0;
 }
     
 </script
-  <h2 id="moneyDisplay"> Money </h2>
-  <script>document.getElementById("moneyDisplay").innerHTML = "Total Money: " + money;</script>
+  <h2 id="moneyDisplay"></h2>
+  <script>document.getElementById("moneyDisplay").innerHTML = "Total Money: " + money; </script>
   <h2> Inventory </h2>
   <h3 id="product1"></h3>
   <script>
