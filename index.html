@@ -11,34 +11,31 @@ var money = 0;
 var product1price = 10;
 function buyProduct1() {
   var amount = parseInt(prompt("How much would you like to buy"));
-  document.getElementById("moneyDisplay").innerHTML = amount;
-  product1 += amount
-  money -= amount * product1price;
+  money = money - (product1price * amount)
+  product1 = product1 + amount;
+  var shouldReload = 1;
 }
-</script>
 
-  <h2 id="moneyDisplay"></h2>
-  <script>
    document.getElementById("moneyDisplay").innerHTML =
    "Total Money: " + money; 
- 
- </script>
-  <h2> Inventory </h2>
-  <h3 id="product1"></h3>
-  <script>
-    var product1 = 0;
-    document.getElementById("product1").innerHTML =
-    "Product 1 left: " + product1; 
-  </script>
-  <h3 id="product2"></h3>
-  <script>
+   
     var product2 = 0;
     document.getElementById("product2").innerHTML =
     "Product 2 left: " + product2; 
-  </script>
-  
-  <h2> Buy </h2>
-  <button onclick="buyProduct1()"> Buy Product 1 </button>
+   
+    var product1 = 0;
+    document.getElementById("product1").innerHTML =
+    "Product 1 left: " + product1; 
+</script>
+ 
+ <h2 id="moneyDisplay"></h2>
+ 
+ <h2> Inventory </h2>
+ <h3 id="product1"></h3>
+ <h3 id="product2"></h3>
+ 
+ <h2> Buy </h2>
+ <button onclick="buyProduct1()"> Buy Product 1 </button>  
 
 </body>
 </html>
