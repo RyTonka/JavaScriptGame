@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<h1> Drug Wars2 </h1>
+<h1> Drug Wars </h1>
 </head>
  
 <body>
@@ -14,8 +14,12 @@
  <button id="visitBank"> Visit Bank</button> <br>
 
 <script>
+var money = 0;
+var priceMultiplier = 1;
+var CPrice = Math.random() * (100000 - 10000) + 100000;
+var HPrice = Math.random() * (50000 - 5000) + 5000;
 function seePrices() {
-alert("These are the prices");
+alert("H price is " + HPrice "," " C price is " + CPrice);
 }
  
 </script
