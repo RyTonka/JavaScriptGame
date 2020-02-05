@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-<h1> Wars123 </h1>
+<h1> Drug Wars </h1>
 
 </head>
 <body>
  
 <script>
+var isPlaying = 1;
 var money = 0;
 var product1price = 10;
+for (isPlaying === 1) {
 function buyProduct1() {
   var amount = parseInt(prompt("How much would you like to buy"));
   money = money - (product1price * amount)
@@ -26,6 +28,8 @@ function buyProduct1() {
     var product1 = 0;
     document.getElementById("product1").innerHTML =
     "Product 1 left: " + product1; 
+ 
+}
 </script>
  
  <h2 id="moneyDisplay"></h2>
