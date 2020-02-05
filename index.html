@@ -6,8 +6,8 @@
  
 <body>
  <button onclick="seePrices()"> See Prices </button> <br>
- <button id="trenchCoat"> Trenchcoat </button> <br> 
- <button id="buy"> Buy </button> <br>
+ <button onclick="trenchCoat()"> Trenchcoat </button> <br> 
+ <button onclick="buy()"> Buy </button> <br>
  <button id="sell"> Sell </button> <br> 
  <button id="jet"> Jet </button> <br> 
  <button id="seeLoanShark"> See Loan Shark </button> <br>
@@ -16,8 +16,32 @@
 <script>
 var money = 0;
 var priceMultiplier = 1;
+var dayNumber = 1;
+
+var CPrice = Math.floor(priceMultiplier * Math.random() * (100 - 10)) + 10;
+var HPrice = Math.floor(priceMultiplier * Math.random() * (100 - 10)) + 10;
+var APrice = Math.floor(priceMultiplier * Math.random() * (100 - 10)) + 10;
+var WPrice = Math.floor(priceMultiplier * Math.random() * (100 - 10)) + 10;
+var SPrice = Math.floor(priceMultiplier * Math.random() * (100 - 10)) + 10;
+var LPrice = Math.floor(priceMultiplier * Math.random() * (100 - 10)) + 10;
+
+var CHolding = 0;
+var HHolding = 0;
+var AHolding = 0;
+var WHolding = 0;
+var SHolding = 0;
+var LHolding = 0;
+
 function seePrices() {
-alert("H price is " + HPrice ", C price is " + CPrice);
+alert("The C Price is " + CPrice + "\nThe H Price is " + HPrice + "\nThe A Price is " + APrice + "\nThe W Price is " + WPrice + "\nThe S Price is " + SPrice + "\nThe L Price is " + LPrice);
+}
+
+function trenchCoat() {
+ alert("You have " + CHolding + " C left" + "\nYou have " + HHolding + " H left" + "\nYou have " + AHolding + " A left" + "\nYou have " + WHolding + " W left" + "\nYou have " + SHolding + " S left" + "\nYou have " + LHolding + " L left");
+}
+
+function buy() {
+
 }
  
 </script
