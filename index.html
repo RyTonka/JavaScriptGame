@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-<h1> Test </h1>
 </head>
  
  <body onload="startGame()">
@@ -53,7 +52,8 @@ function updateGameArea() {
 }
 
 function moveup() {
-    myGamePiece.speedY -= 1; 
+    //myGamePiece.speedY -= 1;
+      this.y-=30;
 }
 
 function movedown() {
@@ -69,10 +69,7 @@ function moveright() {
 }
 </script>
 <div style="text-align:center;width:480px;">
-  <button onclick="moveup()">UP</button><br><br>
-  <button onclick="moveleft()">LEFT</button>
-  <button onclick="moveright()">RIGHT</button><br><br>
-  <button onclick="movedown()">DOWN</button>
+  <button onclick="moveup()">Jump</button><br><br>
 </div>
 
 <p>If you click a button the red square will start moving. Click the same button many times, and it will move faster and faster.</p>
