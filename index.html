@@ -1,50 +1,80 @@
 <!DOCTYPE html>
 <html>
 <head>
-<h1> Drug Wars </h1>
+<h1> Test </h1>
 </head>
  
-<body>
- <button onclick="seePrices()"> See Prices </button> <br>
- <button onclick="trenchCoat()"> Trenchcoat </button> <br> 
- <button onclick="buy()"> Buy </button> <br>
- <button id="sell"> Sell </button> <br> 
- <button id="jet"> Jet </button> <br> 
- <button id="seeLoanShark"> See Loan Shark </button> <br>
- <button id="visitBank"> Visit Bank</button> <br>
-
+ <body onload="startGame()">
 <script>
-var money = 0;
-var priceMultiplier = 1;
-var dayNumber = 1;
 
-var CPrice = Math.floor(priceMultiplier * Math.random() * (100 - 10)) + 10;
-var HPrice = Math.floor(priceMultiplier * Math.random() * (100 - 10)) + 10;
-var APrice = Math.floor(priceMultiplier * Math.random() * (100 - 10)) + 10;
-var WPrice = Math.floor(priceMultiplier * Math.random() * (100 - 10)) + 10;
-var SPrice = Math.floor(priceMultiplier * Math.random() * (100 - 10)) + 10;
-var LPrice = Math.floor(priceMultiplier * Math.random() * (100 - 10)) + 10;
+var myGamePiece;
 
-var CHolding = 0;
-var HHolding = 0;
-var AHolding = 0;
-var WHolding = 0;
-var SHolding = 0;
-var LHolding = 0;
-
-function seePrices() {
-alert("The C Price is " + CPrice + "\nThe H Price is " + HPrice + "\nThe A Price is " + APrice + "\nThe W Price is " + WPrice + "\nThe S Price is " + SPrice + "\nThe L Price is " + LPrice);
+function startGame() {
+    myGamePiece = new component(30, 30, "red", 10, 120);
+    myGameArea.start();
 }
 
-function trenchCoat() {
- alert("You have " + CHolding + " C left" + "\nYou have " + HHolding + " H left" + "\nYou have " + AHolding + " A left" + "\nYou have " + WHolding + " W left" + "\nYou have " + SHolding + " S left" + "\nYou have " + LHolding + " L left");
+var myGameArea = {
+    canvas : document.createElement("canvas"),
+    start : function() {
+        this.canvas.width = 480;
+        this.canvas.height = 270;
+        this.context = this.canvas.getContext("2d");
+        document.body.insertBefore(this.canvas, document.body.childNodes[0]);
+        this.interval = setInterval(updateGameArea, 20);
+    },
+    clear : function() {
+        this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
+    }
 }
 
-function buy() {
-
+function component(width, height, color, x, y) {
+    this.width = width;
+    this.height = height;
+    this.speedX = 0;
+    this.speedY = 0;
+    this.x = x;
+    this.y = y;    
+    this.update = function() {
+        ctx = myGameArea.context;
+        ctx.fillStyle = color;
+        ctx.fillRect(this.x, this.y, this.width, this.height);
+    }
+    this.newPos = function() {
+        this.x += this.speedX;
+        this.y += this.speedY;        
+    }    
 }
- 
-</script
- 
- </body>
- </html>
+
+function updateGameArea() {
+    myGameArea.clear();
+    myGamePiece.newPos();    
+    myGamePiece.update();
+}
+
+function moveup() {
+    myGamePiece.speedY -= 1; 
+}
+
+function movedown() {
+    myGamePiece.speedY += 1; 
+}
+
+function moveleft() {
+    myGamePiece.speedX -= 1; 
+}
+
+function moveright() {
+    myGamePiece.speedX += 1; 
+}
+</script>
+<div style="text-align:center;width:480px;">
+  <button onclick="moveup()">UP</button><br><br>
+  <button onclick="moveleft()">LEFT</button>
+  <button onclick="moveright()">RIGHT</button><br><br>
+  <button onclick="movedown()">DOWN</button>
+</div>
+
+<p>If you click a button the red square will start moving. Click the same button many times, and it will move faster and faster.</p>
+</body>
+</html>
